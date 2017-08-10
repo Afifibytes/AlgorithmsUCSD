@@ -1,30 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//prototype
 unsigned long fibonacci(int);
 
 int main (int argc, char **argv)
 {
-    if (argc > 2)
+    //check the input arguments
+    if (argc != 2)
     {
-        printf("ERORR!\n");
+        printf("Usage: ./fibonacci1 n\n");
     }
     else
     {
-        int number = atoi(argv[1]);
-        unsigned long fibo = fibonacci(number);
+        int n = atoi(argv[1]);
+        unsigned long fibo = fibonacci(n);
         printf("%lu\n", fibo);
     }
 }
 
-unsigned long fibonacci(int number)
+/*
+recursive function calculates the n'th fibonacci number
+*/ 
+unsigned long fibonacci(int n)
 {
-    if(number == 0 || number == 1)
+    if(n == 0 || n == 1)
     {
-        return number;
+        return n;
     }
     else
     {
-        return fibonacci(number - 1) + fibonacci(number - 2);
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 }
