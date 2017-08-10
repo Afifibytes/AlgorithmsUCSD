@@ -9,19 +9,17 @@ int main (int argc, char **argv)
     //check the input arguments
     if (argc != 2)
     {
-        printf("Usage: ./fibonacci1 n\n");
+        printf("Usage: ./fibonacci n\n");
     }
     else
     {
         int n = atoi(argv[1]);
-        unsigned long fibo = fibonacci(n);
-        printf("%lu\n", fibo);
+        printf("%lu\n", fibonacci(n));
     }
 }
 
-/*
-recursive function calculates the n'th fibonacci number
-*/ 
+
+//recursive function calculates the n'th fibonacci number
 unsigned long fibonacci(int n)
 {
     if(n == 0 || n == 1)
